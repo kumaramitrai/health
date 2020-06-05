@@ -1,0 +1,31 @@
+{% extends 'header.html' %} 
+{% block title %}Contact Us{% endblock title %} 
+{% block body %}
+<link rel="stylesheet" href="../static/mycss.css" crossorigin="anonymous" />
+<div class="container-fluid px-0">
+  <img src="../static/contact.jpg" class="img" alt="image" />
+  <div class="contact_form bg-light m-4 mx-4">
+    <h1 class="text-center text-danger" id="h1">Contact Us</h1>
+    <form metod="POST" class="contact-form" action="/contactus"> 
+    {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter your Name Here" autocomplete="off"/>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter your Email Here" autocomplete="off"/>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Contact Number</label>
+        <input type="number" class="form-control" name="mobile" placeholder="Enter Your Mobile Number" autocomplete="off"/>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Enter Your Query Here</label>
+        <textarea class="form-control" name="txtarea" rows="3"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" name="submit" value="Submit"/>
+    </form>
+  </div>
+</div>
+{% endblock body %}
